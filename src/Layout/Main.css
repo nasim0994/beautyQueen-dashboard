@@ -1,0 +1,20 @@
+.sidebar {
+  width: 300px;
+  position: fixed;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+.outlet {
+  width: calc(100% - 300px);
+  position: relative;
+  left: 300px;
+}
