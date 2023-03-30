@@ -4,7 +4,7 @@ import logo from "../../Images/logo.png";
 import sidebarLists from "../../Data/SidebarLists";
 import SidebarList from "./SidebarList";
 
-const Sidebar = () => {
+const Sidebar = ({ setSidebarToggle }) => {
   return (
     <div className="h-full Sidebar">
       <div className="py-6">

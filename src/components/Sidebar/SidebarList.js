@@ -38,9 +38,9 @@ const SidebarList = ({ list }) => {
         </button>
 
         <nav className={`${dropdown ? "block" : "hidden"}`}>
-          <ul className="p-2 pl-5">
-            {list.pages.map((list) => (
-              <DropdownList list={list} />
+          <ul className="p-2 pt-0 pl-5">
+            {list.pages.map((list, index) => (
+              <DropdownList key={index} list={list} />
             ))}
           </ul>
         </nav>

@@ -4,11 +4,12 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const DropdownList = ({ list }) => {
-  console.log(list);
   const [subDropdown, setSubDropdown] = useState(false);
+  const { pathname } = useLocation();
+
   if (list.pages) {
     return (
       <li className="p-1">
@@ -37,8 +38,14 @@ const DropdownList = ({ list }) => {
         <nav className={`${subDropdown ? "block" : "hidden"}`}>
           <ul className="text-[15px] text-neutral/80 pl-7">
             {list?.pages?.map((list, index) => (
-              <li>
-                <Link className="block py-1 hover:text-primary duration-300">
+              <li
+                key={index}
+                className={`${list.link === pathname && "text-primary"}`}
+              >
+                <Link
+                  to={list.link}
+                  className="block py-1 hover:text-primary duration-300"
+                >
                   {list.title}
                 </Link>
               </li>

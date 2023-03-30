@@ -33,9 +33,10 @@ const sidebarLists = [
         pages: [
           {
             title: "Products List",
+            link: "/ecommerce/products/allProducts",
           },
           {
-            title: "All Products",
+            title: "Add Products",
           },
           {
             title: "Edit Products",
