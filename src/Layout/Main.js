@@ -15,7 +15,7 @@ const Main = () => {
           onClick={() => setSidebarToggle(false)}
           className={`${
             !sidebarToggle && "hidden"
-          } fixed top-0 left-0 h-screen w-full bg-[#00000066]`}
+          } fixed top-0 left-0 h-screen w-full bg-[#00000066] z-40`}
         ></div>
 
         {/* Sidebar */}

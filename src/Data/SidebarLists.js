@@ -37,6 +37,7 @@ const sidebarLists = [
           },
           {
             title: "Add Products",
+            link: "/ecommerce/products/addProduct",
           },
           {
             title: "Edit Products",

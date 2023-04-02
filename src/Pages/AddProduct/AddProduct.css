@@ -1,0 +1,31 @@
+.uploadPicturesWrapper > div {
+  display: grid !important;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.fileContainer img.uploadIcon {
+  display: inline !important;
+  margin-left: 180px;
+}
+
+.fileContainer p {
+  display: inline !important;
+}
+
+.fileContainer button.chooseFileButton {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.fileContainer {
+  border: 1px dashed #ddd;
+  display: block !important;
+}
+.uploadPicturesWrapper {
+  margin-top: 20px;
+}
+
+.jodit-status-bar {
+  display: none !important;
+}

@@ -1,0 +1,86 @@
+[
+    {
+      "title": "Personal care",
+      "icon": "https://i.ibb.co/Zg0DWKg/personal-Care.jpg",
+      "dropdown": [
+        {
+          "title": "Skin Care"
+        },
+        {
+          "title": "Body"
+        },
+        {
+          "title": "Face"
+        },
+        {
+          "title": "Hair Care"
+        }
+      ]
+    },
+  
+    {
+      "title": "Mom & Baby",
+      "icon": "https://i.ibb.co/8XT1YYD/mom-baby.jpg",
+      "dropdown": [
+        {
+          "title": "Baby Product"
+        },
+        {
+          "title": "Baby Lotion"
+        },
+        {
+          "title": "Baby Care"
+        },
+        {
+          "title": "Soap & BodyWash"
+        }
+      ]
+    },
+  
+    {
+      "title": "Clothing",
+      "icon": "https://i.ibb.co/NsPmsrp/clothing.jpg",
+      "dropdown": [
+        {
+          "title": "Sharees"
+        },
+        {
+          "title": "Shalwar Kameez"
+        },
+        {
+          "title": "T-Shirts"
+        },
+        {
+          "title": "Kurtis"
+        },
+        {
+          "title": "Party Wear"
+        },
+        {
+          "title": "Undergarments"
+        }
+      ]
+    },
+  
+    {
+      "title": "Accessories",
+      "icon": "https://i.ibb.co/k3Cdyds/accessories.webp",
+      "dropdown": [
+        {
+          "title": "Hair straightener"
+        },
+        {
+          "title": "Loofahs & Sponges"
+        },
+        {
+          "title": "Bag"
+        },
+        {
+          "title": "Watch"
+        },
+        {
+          "title": "Jewelry"
+        }
+      ]
+    }
+  ]

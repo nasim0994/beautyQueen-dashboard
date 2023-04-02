@@ -2,15 +2,39 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { FaUserEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const ProductsList = () => {
-  const { data: products = [], isLoading } = useQuery({
+  const {
+    data: products = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["products"],
     queryFn: () =>
       fetch(`https://beauty-queen-server.vercel.app/products`).then((res) =>
         res.json()
       ),
   });
+
+  const handelProductDelete = (id) => {
+    const confirm = window.confirm(`Are you sure delete this ${id}`);
+    if (confirm) {
+      fetch(`https://beauty-queen-server.vercel.app/product/${id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: `bearer ${localStorage.getItem("Code-Gallery-jwt")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            toast("Delete Success");
+            refetch();
+          }
+        });
+    }
+  };
 
   return (
     <div>
@@ -27,8 +51,8 @@ const ProductsList = () => {
             </tr>
           </thead>
           <tbody>
-            {products?.map((product) => (
-              <tr>
+            {products?.map((product, index) => (
+              <tr key={index}>
                 <td>
                   <div className="flex items-center space-x-3">
                     <div>
@@ -39,7 +63,9 @@ const ProductsList = () => {
                       />
                     </div>
 
-                    <div className="text-[15px]">{product.title}</div>
+                    <div className="text-[15px]" title={product.title}>
+                      {product.title.slice(0, 30)}...
+                    </div>
                   </div>
                 </td>
                 <td>
@@ -52,7 +78,10 @@ const ProductsList = () => {
                     <button className="hover:text-neutral duration-200">
                       <FaUserEdit className="text-lg" />
                     </button>
-                    <button className="hover:text-red-500 duration-200">
+                    <button
+                      onClick={() => handelProductDelete(product._id)}
+                      className="hover:text-red-500 duration-200"
+                    >
                       <AiFillDelete className="text-lg" />
                     </button>
                   </div>
